@@ -175,20 +175,6 @@ items:
                   "legendFormat": "Current: {{ container_name }} {{ cluster }}",
                   "refId": "A"
                 },
-                {
-                  "expr": "sum by(container, cluster) (kube_pod_container_resource_requests_memory_bytes{job=\"kube-state-metrics\", namespace=\"$namespace\", pod=\"$pod\", container=~\"$container\", cluster=~\"$cluster\"})",
-                  "format": "time_series",
-                  "intervalFactor": 2,
-                  "legendFormat": "Requested: {{ container }} {{ cluster }}",
-                  "refId": "B"
-                },
-                {
-                  "expr": "sum by(container, cluster) (kube_pod_container_resource_limits_memory_bytes{job=\"kube-state-metrics\", namespace=\"$namespace\", pod=\"$pod\", container=~\"$container\", cluster=~\"$cluster\"})",
-                  "format": "time_series",
-                  "intervalFactor": 2,
-                  "legendFormat": "Limit: {{ container }} {{ cluster }}",
-                  "refId": "C"
-                }
               ],
               "thresholds": [],
               "timeFrom": null,
